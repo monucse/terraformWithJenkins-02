@@ -20,6 +20,14 @@ pipeline {
                 }
             }
         }
+
+        stages {
+        stage('Debug') {
+            steps {
+                echo "AWS_ACCESS_KEY_ID: ${MY_AWS_ACCESS_KEY}"
+            }
+        }
+    }
         
         stage('Plan') {
             steps {
