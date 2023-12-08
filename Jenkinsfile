@@ -11,6 +11,12 @@ pipeline {
     }
     
     stages {
+    
+        stage('Debug') {
+            steps {
+                echo "AWS_ACCESS_KEY_ID: ${MY_AWS_ACCESS_KEY}"
+            }
+        }
         stage('checkout') {
             steps {
                 script {
@@ -18,12 +24,6 @@ pipeline {
                         bat "git clone https://github.com/monucse/terraformWithJenkins-02.git"
                     }
                 }
-            }
-        }
-        
-        stage('Debug') {
-            steps {
-                echo "AWS_ACCESS_KEY_ID: ${MY_AWS_ACCESS_KEY}"
             }
         }
         
